@@ -23,6 +23,38 @@
   color: #61dafb;
 }
 
+.trends-box{
+  height: 20%;
+  width: 100%;
+  transition: width 0s, height 0s;
+}
+
+.contenedor{
+  height: 100%;
+}
+
+.fila{
+  height: 20%;
+  width: 100%;
+}
+
+.item{
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.trends-item{
+  width: 20%;
+  display: flex;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  transition: all 0.2s ease-in-out;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
