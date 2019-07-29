@@ -77,7 +77,12 @@ class App extends React.Component {
                       console.log(positions);
                       this.getRandomColor()
                       if(positions.includes(i-1) || positions.includes(i-4) || positions.includes(i-5) || positions.includes(i-6)){
+                        if((i===5 && positions.includes(4)) || (i===10 && positions.includes(9)) || (i===15 && positions.includes(14))){
+                          return <TrendsImg obj={object} key={i} valueColor={colorRandom} valuePosition={positions}/>
+                        }else{
+                          positions.splice(i, 1)
                           return <Trends obj={object} key={i} valueColor={colorRandom}/>
+                        }
                       }else{
                         return <TrendsImg obj={object} key={i} valueColor={colorRandom} valuePosition={positions}/>
                       }
