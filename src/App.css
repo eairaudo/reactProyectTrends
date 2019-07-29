@@ -44,6 +44,14 @@
   color: #FFFFFF;
 }
 
+
+.item.img{
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  min-height: 150px;
+}
+
 .trends-item{
   width: 20%;
   display: flex;

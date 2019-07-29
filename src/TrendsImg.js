@@ -12,7 +12,7 @@ class Trends extends React.Component {
     }
 
 
-    componentWillMount() {
+    componentDidMount() {
         fetch('https://api.mercadolibre.com/sites/MLA/search?q='+this.props.obj.keyword)
             .then(res => res.json())
             .then((data) => {
@@ -23,10 +23,9 @@ class Trends extends React.Component {
             .catch(console.log)
     }
     render() {
-
         return (
             <div className="trends-item" style={{backgroundColor: this.props.valueColor}}>
-                <img className="item" src={this.state.imgUrl} alt=""/>
+                <img className="item img" src={this.state.imgUrl} alt=""/>
             </div>
         );
     }

@@ -27,8 +27,8 @@ class App extends React.Component {
           })
         })
         .catch(console.log)
-      this.getRandomColor()
-     setInterval(() => {
+
+    setInterval(() => {
         this.setState(() => {
           return { unseen: "entre de vuelta"}
         });
@@ -65,34 +65,39 @@ class App extends React.Component {
 
     let positions = []
 
+    let colors = []
+
     return (
         <div className="contenedor">
               <div className="trends-box" >
                 {newArray.map((object, i) =>{
                   if(i<20){
+
+                    this.getRandomColor()
+                    while (colors[colors.length -1] === colorRandom || colors[colors.length -5] === colorRandom) {
+                      this.getRandomColor()
+                    }
+                    colors.push(colorRandom)
                     if(i === this.arrayRange(0,19))
                     {
                       positions.push(i)
-                      this.getRandomColor()
-                      console.log(positions)
                       if(positions.includes(i-1) || positions.includes(i-4) || positions.includes(i-5) || positions.includes(i-6)){
                         if((i===5 && positions.includes(4)) || (i===10 && positions.includes(9)) || (i===15 && positions.includes(14))){
-                          return <TrendsImg obj={object} key={i} valueColor={colorRandom} valuePosition={positions}/>
+                          return <TrendsImg obj={object} key={i} valueColor={colors[i]}/>
                         }else{
                           positions.pop()
                           console.log("luego de elimiar el que no va" ,positions)
-                          return <Trends obj={object} key={i} valueColor={colorRandom}/>
+                          return <Trends obj={object} key={i} valueColor={colors[i]}/>
                         }
                       }else{
-                        return <TrendsImg obj={object} key={i} valueColor={colorRandom} valuePosition={positions}/>
+                        return <TrendsImg obj={object} key={i} valueColor={colors[i]}/>
                       }
                     }else{
                       this.getRandomColor()
-                      return <Trends obj={object} key={i} valueColor={colorRandom}/>
+                      return <Trends obj={object} key={i} valueColor={colors[i]}/>
                     }
                   }
               })}
-              <p>{positions +","}</p>
               </div>
         </div>
     );
