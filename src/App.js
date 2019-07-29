@@ -32,7 +32,7 @@ class App extends React.Component {
         this.setState(() => {
           return { unseen: "entre de vuelta"}
         });
-      }, 2000);
+      }, 1500);
   }
 
   getRandomColor(){
@@ -72,15 +72,15 @@ class App extends React.Component {
                   if(i<20){
                     if(i === this.arrayRange(0,19))
                     {
-                      console.log("entro por aca",i)
                       positions.push(i)
-                      console.log(positions);
                       this.getRandomColor()
+                      console.log(positions)
                       if(positions.includes(i-1) || positions.includes(i-4) || positions.includes(i-5) || positions.includes(i-6)){
                         if((i===5 && positions.includes(4)) || (i===10 && positions.includes(9)) || (i===15 && positions.includes(14))){
                           return <TrendsImg obj={object} key={i} valueColor={colorRandom} valuePosition={positions}/>
                         }else{
-                          positions.splice(i, 1)
+                          positions.pop()
+                          console.log("luego de elimiar el que no va" ,positions)
                           return <Trends obj={object} key={i} valueColor={colorRandom}/>
                         }
                       }else{
@@ -92,6 +92,7 @@ class App extends React.Component {
                     }
                   }
               })}
+              <p>{positions +","}</p>
               </div>
         </div>
     );

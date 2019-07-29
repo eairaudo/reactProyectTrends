@@ -24,7 +24,6 @@ class Trends extends React.Component {
     }
     render() {
 
-        console.log(this.props.keyword)
         return (
             <div className="trends-item" style={{backgroundColor: this.props.valueColor}}>
                 <img className="item" src={this.state.imgUrl} alt=""/>
