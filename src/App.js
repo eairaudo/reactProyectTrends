@@ -29,10 +29,11 @@ class App extends React.Component {
         .catch(console.log)
 
     setInterval(() => {
+      this.arrayRange(0,19);
         this.setState(() => {
           return { unseen: "entre de vuelta"}
         });
-      }, 1500);
+      }, 3000);
   }
 
   getRandomColor(){
@@ -45,7 +46,13 @@ class App extends React.Component {
       ans.push(i);
     }
 
-    return ans[Math.floor(Math.random()*ans.length)];;
+    let arrayImgPositionRandom = []
+
+    for (let i = 0; i<10; i ++){
+      arrayImgPositionRandom.push(ans[Math.floor(Math.random()*ans.length)])
+    }
+
+    return arrayImgPositionRandom
   }
 
   randomArray(array) {
@@ -78,7 +85,7 @@ class App extends React.Component {
                       this.getRandomColor()
                     }
                     colors.push(colorRandom)
-                    if(i === this.arrayRange(0,19))
+                    if(this.arrayRange(0,19).includes(i))
                     {
                       positions.push(i)
                       if(positions.includes(i-1) || positions.includes(i-4) || positions.includes(i-5) || positions.includes(i-6)){
@@ -86,7 +93,6 @@ class App extends React.Component {
                           return <TrendsImg obj={object} key={i} valueColor={colors[i]}/>
                         }else{
                           positions.pop()
-                          console.log("luego de elimiar el que no va" ,positions)
                           return <Trends obj={object} key={i} valueColor={colors[i]}/>
                         }
                       }else{

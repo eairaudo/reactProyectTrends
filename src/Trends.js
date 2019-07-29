@@ -8,7 +8,7 @@ class Trends extends React.Component {
     render() {
         return (
             <div className="trends-item" style={{backgroundColor: this.props.valueColor}}>
-                <span className="item">{this.props.obj.keyword}</span>
+                <span className="item anim-typewriter line-1">{this.props.obj.keyword}</span>
                 <img src={this.props.obj.url} alt=""/>
             </div>
         );
