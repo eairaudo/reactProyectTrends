@@ -24,7 +24,7 @@ class Trends extends React.Component {
     }
     render() {
         return (
-            <div className="trends-item" style={{backgroundColor: this.props.valueColor}}>
+            <div className="trends-item " style={{backgroundColor: this.props.valueColor}}>
                 <img className="item img" src={this.state.imgUrl} alt=""/>
             </div>
         );

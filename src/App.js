@@ -88,11 +88,13 @@ class App extends React.Component {
                     if(this.arrayRange(0,19).includes(i))
                     {
                       positions.push(i)
+                      console.log("apenas entro " +positions)
                       if(positions.includes(i-1) || positions.includes(i-4) || positions.includes(i-5) || positions.includes(i-6)){
-                        if((i===5 && positions.includes(4)) || (i===10 && positions.includes(9)) || (i===15 && positions.includes(14))){
+                        if((i===5 && positions.includes(4) && !positions.includes(1)) || (i===10 && positions.includes(9) && !positions.includes(6)) || (i===15 && positions.includes(14) && !positions.includes(11))){
                           return <TrendsImg obj={object} key={i} valueColor={colors[i]}/>
                         }else{
                           positions.pop()
+                          console.log("despues de sacar lo que no van " +positions)
                           return <Trends obj={object} key={i} valueColor={colors[i]}/>
                         }
                       }else{

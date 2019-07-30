@@ -42,6 +42,8 @@
   font-size: 16px;
   font-weight: 700;
   color: #FFFFFF;
+
+
 }
 
 
@@ -87,8 +89,8 @@
 }
 
 @keyframes typewriter{
-  from {max-width: 0}
-  to {max-width: 100%}
+  from{max-width: 0;}
+  to{max-width: 24em;}
 }
 @keyframes blinkTextCursor{
   from{border-right-color: rgba(255,255,255,.75);}
