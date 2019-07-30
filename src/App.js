@@ -29,7 +29,6 @@ class App extends React.Component {
         .catch(console.log)
 
     setInterval(() => {
-      this.arrayRange(0,19);
         this.setState(() => {
           return { unseen: "entre de vuelta"}
         });
@@ -58,7 +57,7 @@ class App extends React.Component {
   randomArray(array) {
     let i = array.length - 1;
     for (; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(Math.random() * (i + 2));
       const temp = array[i];
       array[i] = array[j];
       array[j] = temp;
@@ -68,7 +67,7 @@ class App extends React.Component {
 
   render() {
 
-    const newArray = this.randomArray(this.state.trends);
+    let newArray = this.randomArray(this.state.trends);
 
     let positions = []
 
