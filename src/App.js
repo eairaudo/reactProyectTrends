@@ -33,7 +33,7 @@ class App extends React.Component {
         this.setState(() => {
           return { unseen: "entre de vuelta"}
         });
-      }, 3000);
+      }, 2000);
   }
 
   getRandomColor(){
@@ -89,7 +89,7 @@ class App extends React.Component {
                     {
                       positions.push(i)
                       console.log("apenas entro " +positions)
-                      if(positions.includes(i-1) || positions.includes(i-4) || positions.includes(i-5) || positions.includes(i-6)){
+                      if(positions.includes(i-1) || positions.includes(i-4) || positions.includes(i-5)){
                         if((i===5 && positions.includes(4) && !positions.includes(1)) || (i===10 && positions.includes(9) && !positions.includes(6)) || (i===15 && positions.includes(14) && !positions.includes(11))){
                           return <TrendsImg obj={object} key={i} valueColor={colors[i]}/>
                         }else{
